@@ -14,7 +14,6 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 
 export function JournalForm() {
   const { toast } = useToast();
@@ -39,7 +38,7 @@ export function JournalForm() {
         },
         body: JSON.stringify({
           ...values,
-          date: values.date.toISOString(),
+          date: new Date().toISOString(), // Ensure we're sending the current date in ISO format
         }),
       });
 
@@ -60,6 +59,7 @@ export function JournalForm() {
       setIsSubmitting(false);
     },
     onError: (error: Error) => {
+      console.error('Form submission error:', error);
       toast({
         title: "Error",
         description: error.message || "Failed to create journal entry. Please try again.",

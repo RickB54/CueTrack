@@ -72,14 +72,21 @@ export function registerRoutes(app: Router) {
 
   app.post("/journal", async (req: Request, res: Response) => {
     try {
-      const parsed = insertJournalEntrySchema.safeParse(req.body);
+      console.log('Received journal entry:', req.body);
+      const parsed = insertJournalEntrySchema.safeParse({
+        ...req.body,
+        userId: 1, // TODO: Replace with actual user ID when auth is implemented
+      });
+
       if (!parsed.success) {
+        console.error('Validation errors:', parsed.error.errors);
         res.status(400).json({ 
           message: "Invalid journal entry data",
           errors: parsed.error.errors 
         });
         return;
       }
+
       const entry = await storage.createJournalEntry(parsed.data);
       res.json(entry);
     } catch (error) {
