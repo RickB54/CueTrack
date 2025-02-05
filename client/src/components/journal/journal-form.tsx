@@ -25,16 +25,22 @@ export function JournalForm() {
     resolver: zodResolver(insertJournalEntrySchema),
     defaultValues: {
       content: "",
-      date: new Date().toISOString(),
+      date: new Date(),
       userId: 1, // TODO: Replace with actual user ID when auth is implemented
     },
   });
 
   const { mutate } = useMutation({
     mutationFn: async (values: InsertJournalEntry) => {
-      const response = await apiRequest("/api/journal", {
-        method: "POST",
-        body: values,
+      const response = await fetch('/api/journal', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...values,
+          date: values.date.toISOString(),
+        }),
       });
 
       if (!response.ok) {
