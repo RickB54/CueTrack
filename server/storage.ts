@@ -79,14 +79,63 @@ export class MemStorage implements IStorage {
 
   private initializeDrills() {
     const drillTemplates = [
+      // Beginner Drills
       {
         name: "Basic Straight Shot",
         level: "Beginner",
-        description: "Practice straight shots from different distances",
+        description: "Master the fundamentals of straight shots from various distances",
         imageUrl: "https://images.unsplash.com/photo-1427097829427-56a905bf7004",
-        instructions: "Place the cue ball and object ball in a straight line to any pocket. Practice hitting straight shots from varying distances.",
+        instructions: "1. Place the cue ball 6 inches from the head rail\n2. Place an object ball in the center of the table\n3. Aim for a straight shot to any pocket\n4. Practice from different distances and angles\n5. Focus on maintaining a level cue and follow-through",
       },
-      // Add more drill templates here
+      {
+        name: "Stop Shot Practice",
+        level: "Beginner",
+        description: "Learn to control the cue ball by making it stop after contact",
+        imageUrl: "https://images.unsplash.com/photo-1506359585186-16ff29581308",
+        instructions: "1. Place the cue ball and object ball 12 inches apart\n2. Hit the center of the cue ball\n3. Strike with medium speed\n4. The cue ball should stop upon contact\n5. Practice until you can consistently stop the cue ball",
+      },
+      {
+        name: "Center Table Pocketing",
+        level: "Beginner",
+        description: "Perfect your accuracy with shots from the center of the table",
+        imageUrl: "https://images.unsplash.com/photo-1470376619031-a6791e534bf0",
+        instructions: "1. Position object ball in the center of the table\n2. Place cue ball at various positions\n3. Practice pocketing to all six pockets\n4. Maintain consistent stroke speed\n5. Track your success rate",
+      },
+      // Add more beginner drills...
+
+      // Intermediate Drills
+      {
+        name: "Draw Shot Control",
+        level: "Intermediate",
+        description: "Master drawing the cue ball back after contact",
+        imageUrl: "https://images.unsplash.com/photo-1491510736257-3ad769ff47b6",
+        instructions: "1. Place object ball near center spot\n2. Position cue ball 12-18 inches away\n3. Strike below center with follow through\n4. Practice different distances of draw\n5. Note the spin and speed relationship",
+      },
+      {
+        name: "Rail Cut Shots",
+        level: "Intermediate",
+        description: "Improve your rail cut shot accuracy and position play",
+        imageUrl: "https://images.unsplash.com/photo-1484791984053-c4abb3fd681b",
+        instructions: "1. Place object ball near the rail\n2. Position cue ball for 30-45 degree cut\n3. Focus on hitting the rail first\n4. Control speed for position\n5. Vary cut angles and distances",
+      },
+      // Add more intermediate drills...
+
+      // Advanced Drills
+      {
+        name: "Multi-Rail Position",
+        level: "Advanced",
+        description: "Advanced position play using multiple rails",
+        imageUrl: "https://images.unsplash.com/photo-1495548054858-0e78bb72869e",
+        instructions: "1. Set up a 3-ball pattern\n2. Plan multi-rail paths\n3. Execute with precise speed control\n4. Track cue ball path\n5. Adjust spin and speed as needed",
+      },
+      {
+        name: "Jump Shot Mastery",
+        level: "Advanced",
+        description: "Perfect your jump shots for tournament play",
+        imageUrl: "https://images.unsplash.com/photo-1600965962361-9035dbfd1c50",
+        instructions: "1. Place blocker ball 6 inches from target\n2. Elevate cue 45-60 degrees\n3. Strike down sharply\n4. Practice legal jump technique\n5. Vary distances and angles",
+      },
+      // Add more advanced drills...
     ];
 
     drillTemplates.forEach(drill => {
