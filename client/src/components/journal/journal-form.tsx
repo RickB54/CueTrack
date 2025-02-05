@@ -36,10 +36,7 @@ export function JournalForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...values,
-          date: new Date().toISOString(), // Ensure we're sending the current date in ISO format
-        }),
+        body: JSON.stringify(values),
       });
 
       if (!response.ok) {

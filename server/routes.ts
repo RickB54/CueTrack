@@ -75,6 +75,7 @@ export function registerRoutes(app: Router) {
       console.log('Received journal entry:', req.body);
       const parsed = insertJournalEntrySchema.safeParse({
         ...req.body,
+        date: new Date(req.body.date), // Convert ISO string to Date object
         userId: 1, // TODO: Replace with actual user ID when auth is implemented
       });
 
