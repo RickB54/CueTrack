@@ -11,6 +11,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { format } from "date-fns";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { JournalForm } from "@/components/journal/journal-form";
 
 export default function Journal() {
   const { data: entries, isLoading } = useQuery<JournalEntry[]>({
@@ -22,10 +30,7 @@ export default function Journal() {
       <Shell>
         <div className="space-y-4">
           {[...Array(3)].map((_, i) => (
-            <div
-              key={i}
-              className="h-48 animate-pulse rounded-lg bg-muted"
-            />
+            <div key={i} className="h-48 animate-pulse rounded-lg bg-muted" />
           ))}
         </div>
       </Shell>
@@ -44,10 +49,20 @@ export default function Journal() {
               Record your thoughts and progress
             </p>
           </div>
-          <Button>
-            <Plus className="mr-2 h-4 w-4" />
-            New Entry
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button>
+                <Plus className="mr-2 h-4 w-4" />
+                New Entry
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[500px]">
+              <DialogHeader>
+                <DialogTitle>New Journal Entry</DialogTitle>
+              </DialogHeader>
+              <JournalForm />
+            </DialogContent>
+          </Dialog>
         </div>
 
         <div className="space-y-4">
@@ -66,6 +81,11 @@ export default function Journal() {
               </CardContent>
             </Card>
           ))}
+          {entries?.length === 0 && (
+            <div className="text-center text-muted-foreground">
+              No journal entries yet. Click "New Entry" to get started.
+            </div>
+          )}
         </div>
       </div>
     </Shell>
