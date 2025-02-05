@@ -71,13 +71,21 @@ export function registerRoutes(app: Router) {
   });
 
   app.post("/journal", async (req: Request, res: Response) => {
-    const parsed = insertJournalEntrySchema.safeParse(req.body);
-    if (!parsed.success) {
-      res.status(400).json({ message: "Invalid journal entry data" });
-      return;
+    try {
+      const parsed = insertJournalEntrySchema.safeParse(req.body);
+      if (!parsed.success) {
+        res.status(400).json({ 
+          message: "Invalid journal entry data",
+          errors: parsed.error.errors 
+        });
+        return;
+      }
+      const entry = await storage.createJournalEntry(parsed.data);
+      res.json(entry);
+    } catch (error) {
+      console.error("Error creating journal entry:", error);
+      res.status(500).json({ message: "Failed to create journal entry" });
     }
-    const entry = await storage.createJournalEntry(parsed.data);
-    res.json(entry);
   });
 
   return app;

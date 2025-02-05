@@ -31,27 +31,34 @@ export function JournalForm() {
   });
 
   const { mutate } = useMutation({
-    mutationFn: (values: InsertJournalEntry) =>
-      apiRequest("/api/journal", {
+    mutationFn: async (values: InsertJournalEntry) => {
+      const response = await apiRequest("/api/journal", {
         method: "POST",
         body: values,
-      }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || "Failed to create journal entry");
+      }
+
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["/api/journal"] });
       toast({
-        title: "Entry Created",
+        title: "Success",
         description: "Your journal entry has been saved.",
       });
       form.reset();
+      setIsSubmitting(false);
     },
-    onError: () => {
+    onError: (error: Error) => {
       toast({
         title: "Error",
-        description: "Failed to create journal entry. Please try again.",
+        description: error.message || "Failed to create journal entry. Please try again.",
         variant: "destructive",
       });
-    },
-    onSettled: () => {
       setIsSubmitting(false);
     },
   });
@@ -82,7 +89,7 @@ export function JournalForm() {
           )}
         />
         <Button type="submit" disabled={isSubmitting}>
-          Save Entry
+          {isSubmitting ? "Saving..." : "Save Entry"}
         </Button>
       </form>
     </Form>
