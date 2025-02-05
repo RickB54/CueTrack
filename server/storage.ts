@@ -95,87 +95,108 @@ export class MemStorage implements IStorage {
       {
         name: "Straight Stroke Drill",
         level: "Beginner",
-        description: "Focus on cue ball control and stroke accuracy",
+        description: "Set up a cue ball and object ball in a straight line along the table. Aim to pocket the ball into a corner pocket while making sure the cue ball travels in a straight line.",
         imageUrl: POOL_TABLE_IMAGES[0],
-        instructions: "1. Set up a cue ball and object ball in a straight line along the table\n2. Aim to pocket the ball into a corner pocket\n3. Make sure the cue ball travels in a straight line\n4. Repeat from different distances",
+        instructions: "1. Set up a cue ball and object ball in a straight line along the table\n2. Aim to pocket the ball into a corner pocket\n3. Make sure the cue ball travels in a straight line\n4. Focus on cue ball control and stroke accuracy\n5. Practice from different distances",
       },
       {
         name: "Stop Shot Drill",
         level: "Beginner",
-        description: "Focus on cue ball control and accuracy",
+        description: "Set the cue ball and object ball near each other. The goal is to make the object ball and stop the cue ball in its tracks after impact.",
         imageUrl: POOL_TABLE_IMAGES[1],
-        instructions: "1. Set the cue ball and object ball near each other\n2. Hit the object ball to make it into the pocket\n3. Make the cue ball stop in its tracks after impact\n4. Practice with no follow or draw",
+        instructions: "1. Set the cue ball and object ball near each other\n2. Hit the object ball with center cue ball contact\n3. The goal is to make the object ball stop immediately after impact\n4. Practice with no follow or draw\n5. Focus on cue ball control and accuracy",
       },
       {
         name: "Cut Shot Drill",
         level: "Beginner",
-        description: "Focus on aiming and cutting accuracy",
+        description: "Position the object ball at an angle to a pocket and practice hitting it with a cut shot.",
         imageUrl: POOL_TABLE_IMAGES[2],
-        instructions: "1. Position the object ball at an angle to a pocket\n2. Practice hitting it with a cut shot\n3. Make the object ball into the pocket\n4. Vary the angles to increase difficulty",
+        instructions: "1. Position the object ball at an angle to a pocket\n2. Practice hitting it with a cut shot\n3. Make it into the pocket\n4. Focus on aiming and cutting accuracy\n5. Vary the angles to increase difficulty",
       },
       {
         name: "One-Cushion Bank Shot",
         level: "Beginner",
-        description: "Focus on rail shots and angle calculation",
+        description: "Place the object ball near a rail and aim to bank it off the cushion into a pocket.",
         imageUrl: POOL_TABLE_IMAGES[3],
-        instructions: "1. Place the object ball near a rail\n2. Aim to bank it off the cushion into a pocket\n3. Practice different angles\n4. Focus on consistent power",
+        instructions: "1. Place the object ball near a rail\n2. Aim to bank it off the cushion into a pocket\n3. Focus on rail shots and angle calculation\n4. Practice different angles\n5. Maintain consistent power",
       },
       {
         name: "Cue Ball Follow Drill",
         level: "Beginner",
-        description: "Focus on cue ball movement and top spin control",
+        description: "Practice using the follow shot technique to follow the object ball after contact.",
         imageUrl: POOL_TABLE_IMAGES[4],
-        instructions: "1. Set up an object ball and cue ball\n2. Use the follow shot technique (hitting with top spin)\n3. Follow the object ball into the pocket\n4. Practice controlling follow distance",
+        instructions: "1. Set up an object ball and cue ball\n2. Hit above center on the cue ball\n3. Make the cue ball follow the object ball\n4. Focus on top spin control\n5. Practice different follow distances",
       },
-      // Add remaining 15 beginner drills...
+      {
+        name: "Straight Line Drill",
+        level: "Beginner",
+        description: "Practice pocketing balls in a straight line while maintaining cue ball control.",
+        imageUrl: POOL_TABLE_IMAGES[5],
+        instructions: "1. Set up several object balls in a straight line\n2. Pocket them in sequence\n3. Keep the cue ball traveling straight\n4. Focus on consistency\n5. Master cue ball positioning",
+      },
+      {
+        name: "Ball in Hand Drill",
+        level: "Beginner",
+        description: "Practice position play by placing the cue ball anywhere on the table.",
+        imageUrl: POOL_TABLE_IMAGES[6],
+        instructions: "1. Place cue ball anywhere on the table\n2. Practice pocketing balls\n3. Focus on positioning for next shot\n4. Learn basic position play\n5. Practice shot selection",
+      },
+      {
+        name: "Billiard Drill",
+        level: "Beginner",
+        description: "Practice making the cue ball hit multiple object balls in sequence.",
+        imageUrl: POOL_TABLE_IMAGES[7],
+        instructions: "1. Set up multiple object balls\n2. Hit first object ball\n3. Make it contact second ball\n4. Return to hit first ball\n5. Focus on ball-to-ball control",
+      },
+      {
+        name: "Bridge Practice Drill",
+        level: "Beginner",
+        description: "Practice different bridge techniques for various shot positions.",
+        imageUrl: POOL_TABLE_IMAGES[0],
+        instructions: "1. Place cue ball in different positions\n2. Practice open bridge\n3. Practice closed bridge\n4. Use mechanical bridge when needed\n5. Focus on stability and control",
+      },
+      {
+        name: "Two-Pocket Drill",
+        level: "Beginner",
+        description: "Practice making shots into alternating pockets to improve versatility.",
+        imageUrl: POOL_TABLE_IMAGES[1],
+        instructions: "1. Set up object ball near pocket\n2. Make it into one pocket\n3. Repeat to another pocket\n4. Practice until fluid\n5. Focus on consistency",
+      },
+      // ... Continue with remaining beginner drills
 
       // Intermediate Drills
       {
         name: "Bank Shot Drill",
         level: "Intermediate",
-        description: "Focus on angle calculation and rail shots",
-        imageUrl: POOL_TABLE_IMAGES[5],
-        instructions: "1. Set up an object ball near a rail\n2. Practice banking it into a pocket at various angles\n3. Focus on consistent power\n4. Master different banking angles",
+        description: "Practice banking balls off rails with precise angle calculation.",
+        imageUrl: POOL_TABLE_IMAGES[2],
+        instructions: "1. Set up object ball near rail\n2. Calculate banking angle\n3. Execute bank shot\n4. Practice various angles\n5. Master rail shots",
       },
       {
         name: "Ghost Ball Drill",
         level: "Intermediate",
-        description: "Focus on aiming and visualization",
-        imageUrl: POOL_TABLE_IMAGES[6],
-        instructions: "1. Visualize the 'ghost ball' position\n2. Align your shot to that imagined ball\n3. Practice hitting the exact contact point\n4. Verify accuracy of visualization",
+        description: "Practice visualizing the ghost ball position for precise hits.",
+        imageUrl: POOL_TABLE_IMAGES[3],
+        instructions: "1. Visualize ghost ball position\n2. Align shot properly\n3. Execute with precision\n4. Verify contact point\n5. Improve visualization skills",
       },
-      {
-        name: "Draw Shot Drill",
-        level: "Intermediate",
-        description: "Focus on cue ball spin and backspin control",
-        imageUrl: POOL_TABLE_IMAGES[7],
-        instructions: "1. Practice drawing the cue ball backward after hitting an object ball\n2. Start with simple shots\n3. Gradually increase difficulty\n4. Master different draw distances",
-      },
-      // Add remaining 17 intermediate drills...
+      // ... Continue with remaining intermediate drills
 
       // Advanced Drills
       {
-        name: "The Perfect Break Drill",
+        name: "Perfect Break Drill",
         level: "Advanced",
-        description: "Focus on break shot technique and power control",
-        imageUrl: POOL_TABLE_IMAGES[0],
-        instructions: "1. Practice breaking the rack from the head spot\n2. Aim to spread the balls evenly\n3. Avoid scratches\n4. Focus on consistent power and accuracy",
+        description: "Master the break shot for consistent ball spread and control.",
+        imageUrl: POOL_TABLE_IMAGES[4],
+        instructions: "1. Practice break from head spot\n2. Focus on ball spread\n3. Avoid scratching\n4. Control power\n5. Achieve consistency",
       },
       {
         name: "Advanced Bank Shots",
         level: "Advanced",
-        description: "Focus on rail control and angle calculation",
-        imageUrl: POOL_TABLE_IMAGES[1],
-        instructions: "1. Practice complex bank shots\n2. Make object ball bounce off multiple rails\n3. Pocket the ball\n4. Master various angles and speeds",
+        description: "Execute complex bank shots using multiple rails.",
+        imageUrl: POOL_TABLE_IMAGES[5],
+        instructions: "1. Set up challenging bank shots\n2. Use multiple rails\n3. Calculate precise angles\n4. Control speed\n5. Master position play",
       },
-      {
-        name: "Draw and Follow Shot Drill",
-        level: "Advanced",
-        description: "Focus on advanced cue ball manipulation",
-        imageUrl: POOL_TABLE_IMAGES[2],
-        instructions: "1. Combine draw and follow shots\n2. Alternate between drawing back and following through\n3. Control positioning for next shot\n4. Practice different speeds and distances",
-      },
-      // Add remaining 17 advanced drills...
+      // ... Continue with remaining advanced drills
     ];
 
     drillTemplates.forEach(drill => {
